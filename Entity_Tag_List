@@ -1,0 +1,9 @@
+This is the list of entity tags you can give the Interaction Entity to do stuff
+
+These go in the button
+-eitLeftClickInvalid
+-eitRightClickInvalid
+-eitLongRange
+
+These go on the output entities
+-eitOutput
