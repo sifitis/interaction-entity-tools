@@ -6,4 +6,4 @@ execute as @e[tag=iet_ie] if score #clickType iet matches 1 unless entity @s[tag
 
 tag @s remove iet_player
 tag @e[tag=iet_ie] remove iet_ie
-scoreboard objectives remove iet
+#scoreboard objectives remove iet

@@ -1,5 +1,5 @@
-advancement revoke @s only iet:right_click
+advancement revoke @s only iet:right
 scoreboard objectives add iet dummy
-scoreboard players set #clickType iet 1
+scoreboard players set clickType iet 1
 
 function iet:tag_entities
