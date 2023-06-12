@@ -6,4 +6,9 @@ These go in the button
 -ietLongRange
 
 These go on the output entities
--eitOutput
+-ietOutput
+-ietIgnoreLeft
+-ietIgnoreRight
+
+These can go on players
+-ietVerbose

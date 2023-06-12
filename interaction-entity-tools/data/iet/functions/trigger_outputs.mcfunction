@@ -1,9 +1,11 @@
-execute store result score bid iet run scoreboard players get @s iet_ids
+execute if score clickType iet matches 0 unless entity @s[tag=ietIgnoreLeft] run fill ~ ~ ~ ~ ~ ~ minecraft:redstone_block replace minecraft:red_stained_glass
 
-#Long range
-execute if entity @s[tag=ietLongRange] as @e[tag=ietOutput] store result score @s iet run scoreboard players get @s iet_ids
-execute if entity @s[tag=ietLongRange] as @e[tag=ietOutput] at @s if score @s iet = bid iet run fill ~ ~ ~ ~ ~ ~ minecraft:redstone_block replace minecraft:red_stained_glass
+execute if score clickType iet matches 0 unless entity @s[tag=ietIgnoreLeft] run tellraw @a[tag=ietVerbose] [{"selector":"@s"},{"text":" - Triggered via left click."}]
 
-#Short range
-execute unless entity @s[tag=ietLongRange] as @e[tag=ietOutput,distance=..32] store result score @s iet run scoreboard players get @s iet_ids
-execute unless entity @s[tag=ietLongRange] as @e[tag=ietOutput,distance=..32] at @s if score @s iet = bid iet run fill ~ ~ ~ ~ ~ ~ minecraft:redstone_block replace minecraft:red_stained_glass
+execute if score clickType iet matches 0 if entity @s[tag=ietIgnoreLeft] run tellraw @a[tag=ietVerbose] [{"selector":"@s"},{"text":" - Ignoring left click."}]
+
+execute if score clickType iet matches 1 unless entity @s[tag=ietIgnoreRight] run fill ~ ~ ~ ~ ~ ~ minecraft:redstone_block replace minecraft:red_stained_glass
+
+execute if score clickType iet matches 1 unless entity @s[tag=ietIgnoreLeft] run tellraw @a[tag=ietVerbose] [{"selector":"@s"},{"text":" - Triggered via right click."}]
+
+execute if score clickType iet matches 1 if entity @s[tag=ietIgnoreLeft] run tellraw @a[tag=ietVerbose] [{"selector":"@s"},{"text":" - Ignoring right click."}]
